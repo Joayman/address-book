@@ -1,7 +1,8 @@
 # Address Book
 ### - by Joseph Ayman
-Version: 1.0.0
-Date: 2022-10-07
+Version: 1.0.0 // Date: 2022-10-07 
+ 
+Try the app [here](https://address-book-ja.netlify.app/).
 
 ### Description
 This is a simple address book application that allows you to add, edit, and delete contacts.
