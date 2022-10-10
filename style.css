@@ -87,6 +87,10 @@ table {
     border-spacing: 0;
     margin-bottom: 20px;
 }
+th {
+    text-align: left;
+    padding: 8px;
+}
 td {
     padding: 10px;
     text-align: left;
@@ -163,4 +167,10 @@ tr:hover {
     top: auto;
     right: auto;
     bottom: 0;
+}
+.spiral {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    width: 80vw;
 }

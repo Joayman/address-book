@@ -5,4 +5,4 @@ document.body.appendChild(script);
 $(document).ready(function() {
     console.log('jQuery is ready!');
 });
-// $("button").text("LOLOLOLOL");
+

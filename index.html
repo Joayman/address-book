@@ -13,14 +13,18 @@
     <title>Address Book by Joseph Ayman</title>
 </head>
 <body>
+
+<!-- Top section -->
+
 <h1 class="orange display" style="text-align: center">Address Book</h1>
 <p class="title-small">by Joseph Ayman</p>
-<div class="decoration yellow-bg"></div>
-<div class="decoration orange-bg opposite-side"></div>
 <div class="search-bar">
     <input class="search-box" type="text"/>
     <button class="search-button">Search</button>
 </div>
+
+<!-- Main table -->
+
 <div class="contacts">
     <table>
         <thead>
@@ -30,11 +34,13 @@
             <th>Surname</th>
             <th>Phone number</th>
             <th>Address</th>
-            <th></th>
+            <th>X</th>
         </tr>
         </thead>
         <tr>
-            <td><div class="icon">SG</div></td>
+            <td>
+                <div class="icon">SG</div>
+            </td>
             <td>Skyla</td>
             <td>Gerhold</td>
             <td>+1-739-438-1902</td>
@@ -44,7 +50,9 @@
             </td>
         </tr>
         <tr>
-            <td><div class="icon">EG</div></td>
+            <td>
+                <div class="icon">EG</div>
+            </td>
             <td>Erin</td>
             <td>Greenfelder</td>
             <td>(218) 985-0914</td>
@@ -54,37 +62,46 @@
             </td>
         </tr>
         <tr>
-            <td><div class="icon">SS</div></td>
-            <td>Samantha</td>
-            <td>Smith</td>
-            <td>1234567890</td>
-            <td>5678 Main Street</td>
+            <td>
+                <div class="icon">LM</div>
+            </td>
+            <td>Lupe</td>
+            <td>Murazik</td>
+            <td>732-756-6099</td>
+            <td>85007 Aileen Ways</td>
             <td>
                 <button class="delete-button">X</button>
             </td>
         </tr>
         <tr>
-            <td><div class="icon">DW</div></td>
-            <td>Donald</td>
-            <td>Wick</td>
-            <td>0987654321</td>
-            <td>8765 Main Street</td>
+            <td>
+                <div class="icon">RW</div>
+            </td>
+            <td>Roma</td>
+            <td>Will</td>
+            <td>461-269-0819</td>
+            <td>92656 Dena Falls</td>
             <td>
                 <button class="delete-button">X</button>
             </td>
         </tr>
         <tr>
-            <td><div class="icon">RS</div></td>
-            <td>Rhino</td>
-            <td>Sphore</td>
-            <td>1234567890</td>
-            <td>9012 Main Street</td>
+            <td>
+                <div class="icon">LP</div>
+            </td>
+            <td>Lelah</td>
+            <td>Prohaska</td>
+            <td>365-951-6400</td>
+            <td>529 Agustin Islands</td>
             <td>
                 <button class="delete-button">X</button>
             </td>
         </tr>
     </table>
 </div>
+
+<!-- Footer Pagination -->
+
 <div class="pagination-wrapper">
     <button class="pagination-button">Previous</button>
     <p>Page </p> <input class="pagination-input" type="text"/>
@@ -92,7 +109,27 @@
     <p class="pagination-total-pages">5</p>
     <button class="pagination-button">Next</button>
 </div>
+
+<!-- Decorations -->
+
+<div class="decoration yellow-bg"></div>
+<div class="decoration orange-bg opposite-side"></div>
+
+    <svg class="spiral" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="870" height="870"
+         viewBox="0 0 870 870" fill="none">
+        <mask id="mask0_41_166" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="870" height="870">
+            <rect width="870" height="870" fill="#D9D9D9"></rect>
+        </mask>
+        <g mask="url(#mask0_41_166)">
+            <path d="M469.58 868.75C248.55 868.454 69.733 689.213 70.0447 468.269C70.2938 291.641 213.862 148.518 390.559 148.753C531.949 148.94 646.418 263.68 646.218 405.016C646.059 518.179 554.254 609.695 441.048 609.543C350.487 609.422 277.28 536.046 277.41 445.515C277.513 373.187 336.335 314.548 408.691 314.644C466.639 314.721 513.518 361.711 513.435 419.638C513.37 466.01 475.795 503.471 429.402 503.409C392.354 503.36 362.313 473.249 362.366 436.214"
+                  stroke="white" stroke-width="2" stroke-linecap="round"></path>
+        </g>
+    </svg>
+
+
+<!-- Javascript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
