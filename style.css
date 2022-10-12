@@ -34,6 +34,36 @@ body {
 .padding-m{
     padding: 10%;
 }
+.ml-10{
+    margin-left: 10px;
+}
+.button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px;
+}
+.button:hover {
+    background-color: #ffbb33;
+    color: #fff;
+}
+.main-button{
+    background-color: #e45426;
+    border: 1px solid #e45426;
+    border-radius: 50vw;
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.42857143;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
+.main-button:hover {
+    background-color: #fff;
+    color: #e45426;
+}
 
 /**/
 .title-small {
@@ -183,16 +213,16 @@ tr:hover {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
+    display: none; /* Hide form by default, then turn to flex */
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    z-index: 100;
 
 }
 .form-container {
     background-color: #fff;
     border-radius: 10px;
-    display: hidden;
+    position: relative;
     padding: 20px;
     width: 400px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -224,19 +254,12 @@ tr:hover {
     margin-bottom: 0.5em;
 }
 .form-input {
-    width: auto;
-    padding: 10px;
+    width: 95%;
+    padding: 10px 0 10px 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
 }
 .form-input:focus {
     outline: none;
     border-color: #333;
-}
-.form-button {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    cursor: pointer;
 }
