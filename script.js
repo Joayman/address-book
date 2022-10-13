@@ -4,7 +4,7 @@ document.body.appendChild(script);
 
 
 
-// Use the search bar to search for a specific row in the table
+// Use the search bar to search for a specific row in the table, if the row is found, it will be highlighted
 $("#search-box").on("keyup", function() {
     var value = $(this).val().toLowerCase();
     $("#contacts-table tr").filter(function() {

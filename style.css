@@ -9,6 +9,17 @@ body {
     padding: 5%;
     position: relative;
 }
+/* This removes the arrows from the number input */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
 /* Theme options */
 .orange {
     color: #e45426;
@@ -263,3 +274,17 @@ tr:hover {
     outline: none;
     border-color: #333;
 }
+/* Popup delete */
+.delete-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex; /* Hide form by default, then turn to flex */
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.
