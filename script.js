@@ -43,3 +43,25 @@ $("#add-contact-button").click(function() {
     $("#contacts-table").prepend(newContact);
     $(".form-wrapper").css("display", "none");
 });
+
+// Show the Delete modal
+$(document).on("click", ".delete-button", function() {
+    $(".delete-wrapper").css("display", "flex");
+    $(this).parents("tr").addClass("delete-row");
+});
+
+// Close the Delete modal
+$("#delete-close-button").click(function() {
+    $(".delete-wrapper").css("display", "none");
+});
+$("#delete-cancel-button").click(function() {
+    $(".delete-wrapper").css("display", "none");
+});
+
+// Delete the contact from the table
+$("#delete-confirm-button").click(function() {
+    $(".delete-row").remove();
+    $(".delete-wrapper").css("display", "none");
+});
+
+// Pagination
