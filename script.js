@@ -63,11 +63,3 @@ $("#delete-close-button").click(function() {
 $("#delete-cancel-button").click(function() {
     $(".delete-wrapper").css("display", "none");
 });
-
-// Delete the contact from the table
-$("#delete-confirm-button").click(function() {
-    $(".delete-row").remove();
-    $(".delete-wrapper").css("display", "none");
-});
-
-// Pagination
