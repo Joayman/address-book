@@ -24,26 +24,6 @@ $(".form-close-button").click(function() {
 });
 
 // Add a new contact to the table
-/* $("#add-contact-button").click(function() {
-    const name = $("#name").val();
-    const surname = $("#surname").val();
-    const number = $("#number").val();
-    const address = $("#address").val();
-    const newContact = `
-        <tr>
-            <td> <div class="icon">${name[0]+surname[0]}</div> </td>
-            <td>${name}</td>
-            <td>${surname}</td>
-            <td>${number}</td>
-            <td>${address}</td>
-            <td> <button class="delete-button">X</button> </td>
-        </tr>
-    `;
-
-    $("#contacts-table").prepend(newContact);
-    $(".form-wrapper").css("display", "none");
-}); */
-
 // If the new contact already exists, show an error message
 $("#add-contact-button").click(function() {
     const name = $("#name").val();
