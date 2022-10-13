@@ -2,39 +2,44 @@ const script = document.createElement('script');
 script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js';
 document.body.appendChild(script);
 
-$(document).ready(function() {
-    console.log('jQuery is ready!');
-    // Add event listener to the Add Contact button
-    $('#add-contact').click(function() {
-        // Get the name and phone number from the input fields
-        var name = $('#name').val();
-        var phone = $('#phone').val();
-        // Add the contact to the list
-        addContact(name, phone);
-    }
-// Add a contact to the table
-    function addContact(name, phone) {
-        // Create a new row
-        var row = $('<tr></tr>');
-        // Create a new cell for the name
-        var nameCell = $('<td></td>');
-        // Add the name to the cell
-        nameCell.text(name);
-        // Add the name cell to the row
-        row.append(nameCell);
-        // Create a new cell for the phone number
-        var phoneCell = $('<td></td>');
-        // Add the phone number to the cell
-        phoneCell.text(phone);
-        // Add the phone number cell to the row
-        row.append(phoneCell);
 
-        $('#contacts-table').append(row);
-    }
 
-// Add event listener to the close button
-    $('#form-close-button').click(function() {
-        // Hide the modal
-        $('#form-wrapper').hide();
-    }
+// Use the search bar to search for a specific row in the table
+$("#search-box").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#contacts-table tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+});
+
+
+// Show the modal
+$("#add-contact").click(function() {
+    $(".form-wrapper").css("display", "flex");
+});
+
+// Close the modal
+$(".form-close-button").click(function() {
+    $(".form-wrapper").css("display", "none");
+});
+
+// Add a new contact to the table
+$("#add-contact-button").click(function() {
+    const name = $("#name").val();
+    const surname = $("#surname").val();
+    const number = $("#number").val();
+    const address = $("#address").val();
+    const newContact = `
+        <tr>
+            <td> <div class="icon">${name[0]+surname[0]}</div> </td>
+            <td>${name}</td>
+            <td>${surname}</td>
+            <td>${number}</td>
+            <td>${address}</td>
+            <td> <button class="delete-button">X</button> </td>
+        </tr>
+    `;
+
+    $("#contacts-table").prepend(newContact);
+    $(".form-wrapper").css("display", "none");
 });

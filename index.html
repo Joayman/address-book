@@ -19,9 +19,9 @@
 <h1 class="orange display" style="text-align: center">Address Book</h1>
 <p class="title-small">by Joseph Ayman</p>
 <div class="search-bar">
-    <input class="search-box" type="text" placeholder="Search"/>
+    <input id="search-box" class="search-box" type="text" placeholder="Search"/>
     <button class="button ml-10">Search</button>
-    <button class="add-contact main-button ml-10">
+    <button id="add-contact" class="main-button ml-10">
         ＋
     </button>
 </div>
@@ -29,7 +29,7 @@
 <!-- Main table -->
 
 <div class="contacts-wrapper">
-    <table class="contacts-table">
+    <table id="contacts-table">
         <thead>
         <tr class="gray">
             <th></th>
@@ -140,27 +140,23 @@
         <div class="form-content">
             <div class="form-row">
                 <label class="form-label">Name</label>
-                <input class="form-input" type="text"/>
+                <input class="form-input" id="name" name="name" type="text"/>
             </div>
             <div class="form-row">
                 <label class="form-label">Surname</label>
-                <input class="form-input" type="text"/>
+                <input class="form-input" id="surname" name="surname" type="text"/>
             </div>
             <div class="form-row">
                 <label class="form-label">Phone number</label>
-                <input class="form-input" type="number"/>
+                <input class="form-input"  id="number" name="number" type="number"/>
             </div>
             <div class="form-row">
                 <label class="form-label">Address</label>
-                <input class="form-input" type="text"/>
-            </div>
-            <div class="form-row">
-                <label class="form-label">Photo</label>
-                <input class="form-input" type="file"/>
+                <input class="form-input" id="address" name="address" type="text"/>
             </div>
         </div>
         <div class="form-footer">
-            <button class="main-button ml-10">Add</button>
+            <button id="add-contact-button" class="main-button ml-10">Add</button>
         </div>
     </div>
 </div>
