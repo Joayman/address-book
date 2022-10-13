@@ -157,8 +157,14 @@ tr:hover {
 .delete-button {
     background-color: #fff;
     border: 1px solid #ccc;
-    border-radius: 100%;
+    border-radius: 50vw;
+    height: 23px;
+    width: 23px;
     margin-right: 10px;
+}
+.delete-button:hover {
+    background-color: #ffbb33;
+    color: #fff;
 }
 
 /* Pagination */
