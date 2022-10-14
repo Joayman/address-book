@@ -7,7 +7,7 @@ document.body.appendChild(script);
 // Use the search bar to search for a specific row in the table, if the row is found, it will be highlighted
 $("#search-box").on("keyup", function() {
     var value = $(this).val().toLowerCase();
-    $("#contacts-table tr").filter(function() {
+    $("#contacts-table-body tr").filter(function() {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
 });
@@ -63,3 +63,32 @@ $("#delete-close-button").click(function() {
 $("#delete-cancel-button").click(function() {
     $(".delete-wrapper").css("display", "none");
 });
+
+// If the total number of contacts is 0, show the "No contacts" message
+
+// Pagination if the total number of contacts is more than 10
+// If the total number of contacts is less than 10, hide the pagination buttons
+
+// If the user clicks on the "Next" button, show the next 10 contacts
+// If the user clicks on the "Previous" button, show the previous 10 contacts
+let currentPage = 1;
+const totalPage = $("#contacts-table-body tr").length/10;
+
+$("#next").click(function() {
+    if (currentPage < totalPage) {
+        currentPage++;
+        showContacts(currentPage);
+    }
+});
+$("#previous").click(function() {
+    if (currentPage > 1) {
+        currentPage--;
+        showContacts(currentPage);
+    }
+});
+
+// Tell a joke
+$("#tell-joke").click(function() {
+    const joke = "Why did the programmer quit his job? Because he didn't get arrays.";
+    alert(joke);
+}
