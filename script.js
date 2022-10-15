@@ -86,9 +86,3 @@ $("#previous").click(function() {
         showContacts(currentPage);
     }
 });
-
-// Tell a joke
-$("#tell-joke").click(function() {
-    const joke = "Why did the programmer quit his job? Because he didn't get arrays.";
-    alert(joke);
-}
