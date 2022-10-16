@@ -41,70 +41,31 @@
         </thead>
         <tbody id="contacts-table-body">
         <tr>
-            <td>
-                <div class="icon">SG</div>
-            </td>
-            <td>Skyla</td>
-            <td>Gerhold</td>
-            <td>+1-739-438-1902</td>
-            <td>992 Braun Plains</td>
-            <td>
-                <button class="delete-button">X</button>
-            </td>
+            <td><div class="icon">SG</div></td>
+            <td>Skyla</td><td>Gerhold</td><td>+1-739-438-1902</td><td>992 Braun Plains</td>
+            <td><button class="delete-button">X</button></td>
         </tr>
         <tr>
-            <td>
-                <div class="icon">EG</div>
-            </td>
-            <td>Erin</td>
-            <td>Greenfelder</td>
-            <td>(218) 985-0914</td>
-            <td>70106 Rogahn Spur Suite 957</td>
-            <td>
-                <button class="delete-button">X</button>
-            </td>
+            <td><div class="icon">EG</div></td>
+            <td>Erin</td><td>Greenfelder</td><td>(218) 985-0914</td><td>70106 Rogahn Spur Suite 957</td>
+            <td><button class="delete-button">X</button></td>
         </tr>
         <tr>
-            <td>
-                <div class="icon">LM</div>
-            </td>
-            <td>Lupe</td>
-            <td>Murazik</td>
-            <td>732-756-6099</td>
-            <td>85007 Aileen Ways</td>
-            <td>
-                <button class="delete-button">X</button>
-            </td>
+            <td><div class="icon">LM</div></td>
+            <td>Lupe</td><td>Murazik</td><td>732-756-6099</td><td>85007 Aileen Ways</td>
+            <td><button class="delete-button">X</button></td>
         </tr>
         <tr>
-            <td>
-                <div class="icon">RW</div>
-            </td>
-            <td>Roma</td>
-            <td>Will</td>
-            <td>461-269-0819</td>
-            <td>92656 Dena Falls</td>
-            <td>
-                <button class="delete-button">X</button>
-            </td>
+            <td><div class="icon">RW</div></td>
+            <td>Roma</td><td>Will</td><td>461-269-0819</td><td>92656 Dena Falls</td>
+            <td><button class="delete-button">X</button></td>
         </tr>
         <tr>
-            <td>
-                <div class="icon">LP</div>
-            </td>
-            <td>Lelah</td>
-            <td>Prohaska</td>
-            <td>365-951-6400</td>
-            <td>529 Agustin Islands</td>
-            <td>
-                <button class="delete-button">X</button>
-            </td>
+            <td><div class="icon">LP</div></td>
+            <td>Lelah</td><td>Prohaska</td><td>365-951-6400</td><td>529 Agustin Islands</td>
+            <td><button class="delete-button">X</button></td>
         </tr>
         </tbody>
-        <tr>
-           <td colspan="6"><div class="no-contacts">No Contacts!</div></td>
-        </tr>
-
     </table>
 </div>
 
@@ -112,10 +73,14 @@
 
 <div class="pagination-wrapper">
     <button class="pagination-button">Previous</button>
-    <p>Page </p> <input class="pagination-input" type="text"/>
-    <p>of &nbsp;</p>
-    <p class="pagination-total-pages">5</p>
+    <ul class="pagination">
+    </ul>
     <button class="pagination-button">Next</button>
+    <select id="max-rows">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="25">25</option>
+    </select>
 </div>
 
 <!-- Decorations -->
