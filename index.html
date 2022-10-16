@@ -36,7 +36,7 @@
             <th>Surname</th>
             <th>Phone number</th>
             <th>Address</th>
-            <th>X</th>
+            <th></th>
         </tr>
         </thead>
         <tbody id="contacts-table-body">
@@ -100,10 +100,11 @@
                 <button class="delete-button">X</button>
             </td>
         </tr>
+        </tbody>
         <tr>
            <td colspan="6"><div class="no-contacts">No Contacts!</div></td>
         </tr>
-        </tbody>
+
     </table>
 </div>
 
@@ -142,13 +143,15 @@
             <button class="form-close-button button">X</button>
         </div>
         <div class="form-content">
-            <div class="form-row">
-                <label class="form-label">Name</label>
-                <input class="form-input" id="name" name="name" type="text"/>
-            </div>
-            <div class="form-row">
-                <label class="form-label">Surname</label>
-                <input class="form-input" id="surname" name="surname" type="text"/>
+            <div class="form-half-rows">
+                <div class="form-row">
+                    <label class="form-label">Name</label>
+                    <input class="form-input" id="name" name="name" type="text"/>
+                </div>
+                <div class="form-row">
+                    <label class="form-label">Surname</label>
+                    <input class="form-input" id="surname" name="surname" type="text"/>
+                </div>
             </div>
             <div class="form-row">
                 <label class="form-label">Phone number</label>
@@ -160,6 +163,7 @@
             </div>
         </div>
         <div class="form-footer">
+            <p class="error-message">*Please fill all the information above!</p>
             <button id="add-contact-button" class="main-button ml-10">Add</button>
         </div>
     </div>

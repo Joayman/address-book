@@ -3,7 +3,6 @@ script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js';
 document.body.appendChild(script);
 
 
-
 // Use the search bar to search for a specific row in the table, if the row is found, it will be highlighted
 $("#search-box").on("keyup", function() {
     var value = $(this).val().toLowerCase();
@@ -12,13 +11,31 @@ $("#search-box").on("keyup", function() {
     });
 });
 
+// Sort the table by the column that is clicked
+$(document).ready(function(){
+    const comparer = (index, asc) => (a, b) => ((v1, v2) =>
+        v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
+    )($(a).children('td').eq(index).text(), $(b).children('td').eq(index).text()) * [1,-1][+!!asc];
 
-// Show the modal
+    $("#contacts-table th").click(function(){
+        var table = $(this).parents('table').eq(0)
+        var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+        this.asc = !this.asc
+        if (!this.asc){rows = rows.reverse()}
+        for (var i = 0; i < rows.length; i++){table.append(rows[i])}
+        // add arrow to the column that is sorted
+        $("#contacts-table th").removeClass("sorted");
+        $(this).addClass("sorted");
+    })
+});
+
+
+// Show the add contact modal
 $("#add-contact").click(function() {
     $(".form-wrapper").css("display", "flex");
 });
 
-// Close the modal
+// Close the add contact modal
 $(".form-close-button").click(function() {
     $(".form-wrapper").css("display", "none");
 });
@@ -49,6 +66,15 @@ $("#add-contact-button").click(function() {
     }
 });
 
+// Close the error message
+$(".form-close-button").click(function() {
+    $(".error-message").css("display", "none");
+});
+
+$(".form-input").keyup(function() {
+    $(".error-message").css("display", "none");
+});
+
 
 // Show the Delete modal
 $(document).on("click", ".delete-button", function() {
@@ -64,25 +90,9 @@ $("#delete-cancel-button").click(function() {
     $(".delete-wrapper").css("display", "none");
 });
 
-// If the total number of contacts is 0, show the "No contacts" message
-
-// Pagination if the total number of contacts is more than 10
-// If the total number of contacts is less than 10, hide the pagination buttons
-
-// If the user clicks on the "Next" button, show the next 10 contacts
-// If the user clicks on the "Previous" button, show the previous 10 contacts
-let currentPage = 1;
-const totalPage = $("#contacts-table-body tr").length/10;
-
-$("#next").click(function() {
-    if (currentPage < totalPage) {
-        currentPage++;
-        showContacts(currentPage);
-    }
+// Delete the contact
+$("#delete-confirm-button").click(function() {
+    $(".delete-row").remove();
+    $(".delete-wrapper").css("display", "none");
 });
-$("#previous").click(function() {
-    if (currentPage > 1) {
-        currentPage--;
-        showContacts(currentPage);
-    }
-});
+
