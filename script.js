@@ -114,5 +114,7 @@ $(document).ready(function () {
         });
     });
 
+    // show 5 rows by default
+    $("#max-rows").val(5).change();
 
 });
