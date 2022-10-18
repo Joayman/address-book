@@ -59,20 +59,6 @@ $(document).ready(function () {
         $(this).parents("tr").addClass("delete-row");
     });
 
-    // Close the Delete modal
-    $("#delete-close-button").click(function () {
-        $(".delete-wrapper").css("display", "none");
-    });
-    $("#delete-cancel-button").click(function () {
-        $(".delete-wrapper").css("display", "none");
-    });
-
-    // Delete the contact
-    $("#delete-confirm-button").click(function () {
-        $(".delete-row").remove();
-        $(".delete-wrapper").css("display", "none");
-    });
-
     // Pagination
     // Thanks to Code Tube, https://www.youtube.com/watch?v=yL4sn6ISPUI.
     // Code Tube's video helped me a lot to understand how to implement pagination in a table
@@ -116,6 +102,24 @@ $(document).ready(function () {
 
     // Show 5 rows by default
     // Must be called after the pagination function
-    $("#max-rows").val(5).change();
+    $("#max-rows").change();
+
+    // Close the Delete modal
+    $("#delete-close-button").click(function () {
+        $(".delete-wrapper").css("display", "none");
+    });
+    $("#delete-cancel-button").click(function () {
+        $(".delete-wrapper").css("display", "none");
+    });
+
+    // Delete the contact
+    $("#delete-confirm-button").click(function () {
+        $(".delete-row").remove();
+        $(".delete-wrapper").css("display", "none");
+        // Reset the pagination to the selected value
+        $("#max-rows").change();
+    });
+
+
 
 });
