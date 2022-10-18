@@ -382,11 +382,11 @@ input[type=number] {
     .contacts-wrapper {
         overflow-x: auto;
     }
-    .icon {
-        margin: auto;
+    table td {
+        padding: 5px;
     }
-    table td:last-child {
-        border-bottom: 0;
+    .icon {
+        display: none;
     }
     /* Pagination */
     .pagination-content {
@@ -395,6 +395,16 @@ input[type=number] {
     }
     .pagination-select {
         margin: 10px 0;
+    }
+    .pagination-select-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #pagination{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     /* Popup add contact */
     .form-container {
