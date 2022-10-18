@@ -385,13 +385,17 @@ input[type=number] {
     .icon {
         margin: auto;
     }
-
-
     table td:last-child {
         border-bottom: 0;
     }
     /* Pagination */
-
+    .pagination-content {
+        display: flex;
+        flex-direction: column;
+    }
+    .pagination-select {
+        margin: 10px 0;
+    }
     /* Popup add contact */
     .form-container {
         margin: 20px;
