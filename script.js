@@ -114,7 +114,8 @@ $(document).ready(function () {
         });
     });
 
-    // show 5 rows by default
+    // Show 5 rows by default
+    // Must be called after the pagination function
     $("#max-rows").val(5).change();
 
 });

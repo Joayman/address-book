@@ -9,16 +9,7 @@ body {
     padding: 5%;
     position: relative;
 }
-/* This removes the arrows from the number input */
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
-    /* Firefox */
-    input[type=number] {
-        -moz-appearance: textfield;
-    }
+
 
 /* Theme options */
 .orange {
@@ -74,22 +65,13 @@ body {
     color: #e45426;
 }
 
-/**/
+/*Hero*/
 .title-small {
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 0.5em;
     margin-top: 0;
     text-align: center;
-}
-.icon {
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
-    border: #333333 1px solid;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 /* Search */
@@ -152,10 +134,14 @@ tr:hover {
     display: flex;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.no-contacts {
-    text-align: center;
-    padding: 20px;
-    display: none;
+.icon {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    border: #333333 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .delete-button {
     background-color: #fff;
@@ -171,11 +157,18 @@ tr:hover {
 }
 
 /* Pagination */
+
 #pagination {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
+}
+/*This wrapper keeps the pagination in the center of the page*/
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .pagination-content {
     background-color: rgba(250, 250, 250, 0.8);
@@ -187,15 +180,11 @@ tr:hover {
     align-content: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+/* Centers the Pagination label text, it's off center by default */
 .pagination-content label{
     margin: 0;
     padding: 0;
     line-height: 2.5;
-}
-.pagination-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .pagination-button {
     background-color: #fff;
@@ -221,20 +210,6 @@ tr:hover {
     display: inline-block;
     margin: 0 5px;
     cursor: pointer;
-}
-.page-link {
-    color: #333;
-    text-decoration: none;
-}
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
 }
 
 /* Decorations */
@@ -375,4 +350,53 @@ https://www.w3schools.com/howto/howto_css_shake_image.asp*/
 @keyframes fade-up {
     0% { opacity: 0; transform: translateY(10px); }
     100% { opacity: 1; transform: translateY(0); }
+}
+
+/* This removes the arrows from the number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Mobile view */
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    #add-contact {
+        margin-top: 20px;
+    }
+    .search-bar {
+       display: flex;
+        flex-direction: column;
+    }
+    .button:hover {
+        background-color: inherit;
+    }
+    /* Contacts Table */
+    .contacts-wrapper {
+        overflow-x: auto;
+    }
+    .icon {
+        margin: auto;
+    }
+
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+    /* Pagination */
+
+    /* Popup add contact */
+    .form-container {
+        margin: 20px;
+    }
+    .form-half-rows {
+        flex-direction: column;
+    }
 }
