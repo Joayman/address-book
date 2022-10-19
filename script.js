@@ -1,64 +1,4 @@
 $(document).ready(function () {
-    // Use the search bar to search for a specific row in the table
-    $("#search-box").on("keyup", function () {
-        const value = $(this).val().toLowerCase();
-        $("#contacts-table-body tr").filter(function () {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-    });
-
-    // Show the add contact modal
-    $("#add-contact").click(function () {
-        $(".form-wrapper").css("display", "flex");
-    });
-
-    // Close the add contact modal
-    $(".form-close-button").click(function () {
-        $(".form-wrapper").css("display", "none");
-    });
-
-    // Add a new contact to the table
-    // If one of the inputs is empty, show an error message
-    $("#add-contact-button").click(function () {
-        const name = $("#name").val();
-        const surname = $("#surname").val();
-        const number = $("#number").val();
-        const address = $("#address").val();
-        const newContact = `
-        <tr>
-            <td> <div class="icon">${name[0] + surname[0]}</div> </td>
-            <td>${name}</td>
-            <td>${surname}</td>
-            <td>${number}</td>
-            <td>${address}</td>
-            <td> <button class="delete-button">X</button> </td>
-        </tr>
-    `;
-
-        if (name === "" || surname === "" || number === "" || address === "") {
-            $(".error-message").css("display", "block");
-            // Animate the error message with shake animation
-            $(".error-message").addClass("shake");
-        } else {
-            $("#contacts-table").prepend(newContact);
-            $(".form-wrapper").css("display", "none");
-        }
-    });
-
-    // Close the error message
-    $(".form-close-button").click(function () {
-        $(".error-message").css("display", "none");
-    });
-    $(".form-input").keyup(function () {
-        $(".error-message").css("display", "none");
-    });
-
-    // Show the Delete modal
-    $(document).on("click", ".delete-button", function () {
-        $(".delete-wrapper").css("display", "flex");
-        $(this).parents("tr").addClass("delete-row");
-    });
-
     // Pagination
     // Thanks to Code Tube, https://www.youtube.com/watch?v=yL4sn6ISPUI.
     // Code Tube's video helped me a lot to understand how to implement pagination in a table
@@ -104,22 +44,83 @@ $(document).ready(function () {
     // Must be called after the pagination function
     $("#max-rows").change();
 
+    // Use the search bar to search for a specific row in the table
+    $("#search-box").on("keyup", function () {
+        const value = $(this).val().toLowerCase();
+        $("#contacts-table-body tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+
+    // Show the add contact modal
+    $("#add-contact").click(function () {
+        $("#add-contact-form").css("display", "flex");
+    });
+
+    // Close the add contact modal
+    $(".form-close-button").click(function () {
+        $("#add-contact-form").css("display", "none");
+    });
+
+    // Add a new contact to the table
+    // If one of the inputs is empty, show an error message
+    $("#add-contact-button").click(function () {
+        const name = $("#name").val();
+        const surname = $("#surname").val();
+        const number = $("#number").val();
+        const address = $("#address").val();
+        // add new contact to the object
+
+        const newContact = `
+        <tr>
+            <td> <div class="icon">${name[0] + surname[0]}</div> </td>
+            <td>${name}</td>
+            <td>${surname}</td>
+            <td>${number}</td>
+            <td>${address}</td>
+            <td> <button class="delete-button">X</button> </td>
+        </tr>
+    `;
+
+        if (name === "" || surname === "" || number === "" || address === "") {
+            $(".error-message").css("display", "block");
+            // Animate the error message with shake animation
+            $(".error-message").addClass("shake");
+        } else {
+            $("#contacts-table-body").prepend(newContact);
+            $("#add-contact-form").css("display", "none");
+            $("#max-rows").change();
+        }
+    });
+    // Close the error message
+    $(".form-close-button").click(function () {
+        $(".error-message").css("display", "none");
+    });
+    $(".form-input").keyup(function () {
+        $(".error-message").css("display", "none");
+    });
+
+    // Show the Delete modal
+    $(document).on("click", ".delete-button", function () {
+        $("#delete-form").css("display", "flex");
+        $(this).parents("tr").addClass("delete-row");
+    });
+
+
     // Close the Delete modal
     $("#delete-close-button").click(function () {
-        $(".delete-wrapper").css("display", "none");
+        $("#delete-form").css("display", "none");
     });
     $("#delete-cancel-button").click(function () {
-        $(".delete-wrapper").css("display", "none");
+        $("#delete-form").css("display", "none");
     });
 
     // Delete the contact
     $("#delete-confirm-button").click(function () {
         $(".delete-row").remove();
-        $(".delete-wrapper").css("display", "none");
+        $("#delete-form").css("display", "none");
         // Reset the pagination to the selected value
         $("#max-rows").change();
     });
-
-
 
 });

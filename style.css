@@ -108,19 +108,19 @@ table {
     border-spacing: 0;
     margin-bottom: 20px;
 }
-th {
+table th {
     text-align: left;
     padding: 8px;
 }
-td {
+table td {
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
-thead tr {
+table thead tr {
     background-color: #f2f2f2;
 }
-tr:hover {
+table tr:hover {
     background-color: #f5f5f5;
 }
 
@@ -235,7 +235,7 @@ tr:hover {
     width: 80vw;
 }
 
-/* Popup add contact */
+/* Popups */
 .form-wrapper {
     position: fixed;
     top: 0;
@@ -247,7 +247,6 @@ tr:hover {
     justify-content: center;
     align-items: center;
     z-index: 100;
-
 }
 .form-container {
     background-color: #fff;
@@ -306,19 +305,6 @@ tr:hover {
     font-size: 0.8em;
     margin-top: 0.5em;
     display: none;
-}
-/* Popup delete */
-.delete-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none; /* Hide form by default, then turn to flex */
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
 }
 
 /* Animations */
